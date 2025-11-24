@@ -43,21 +43,41 @@
             margin-bottom: 0px;
         }
 
-        .hero h1 {
-            font-size: 79px;
-            font-weight: 700;
+        .hero-sub {
+            font-size: 32px;
+            font-weight: 600;
             color: #c9a961;
-            margin-bottom: 0px;
-            letter-spacing: 3px;
-            line-height: 1;
+            line-height: 1.3;
+            margin-bottom: 15px;
         }
 
-        .hero h2 {
-            font-size: 79px;
+        .hero-main {
+            font-size: 68px;
             font-weight: 700;
             color: #ffffff;
-            line-height: 1;
-            margin-bottom: -20px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF0000 0%, #c23b3b 100%);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+            margin-bottom: 40px;
+        }
+
+        .badge-icon {
+            margin: 0 10px;
+        }
+
+        .badge-text {
+            letter-spacing: 2px;
         }
 
         .hero-content {
@@ -91,23 +111,26 @@
         .benefits-list {
             list-style: none;
             text-align: left;
-            padding-left: 20px;
+            padding-left: 0;
+            margin: 0;
+            flex: 1;
         }
 
         .benefits-list li {
-            font-size: 24px;
+            font-size: 18px;
             color: #c9a961;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
         }
 
         .benefits-list li:before {
-            content: "•";
+            content: "✓";
             position: absolute;
             left: 0;
             color: #c9a961;
-            font-size: 32px;
+            font-size: 20px;
+            font-weight: 900;
         }
 
         .discount {
@@ -117,7 +140,6 @@
             margin-bottom: 15px;
             line-height: 1;
             white-space: nowrap;
-            animation: pulse-scale 3s ease-in-out infinite;
         }
 
         .limited {
@@ -128,29 +150,74 @@
             white-space: nowrap;
         }
 
+        .price-benefits-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .price-display {
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .price-old {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FF0000;
+            text-decoration: line-through;
+            text-decoration-thickness: 3px;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+
+        .price-new {
+            font-size: 72px;
+            font-weight: 900;
+            color: #FFD700;
+            line-height: 1;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(255, 215, 0, 0.4),
+                         0 0 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .price-save {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FF6B35;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
         .cta-btn {
             display: inline-block;
-            background-color: #2d6a4f;
+            background-color: #FF6B35;
             color: #ffffff;
             font-size: 26px;
             font-weight: 700;
             padding: 11px 50px;
             text-decoration: none;
             border-radius: 12px;
+            border: 3px solid #FFD23F;
             margin-bottom: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
             width: auto;
             min-width: 550px;
             animation: glow-pulse 2s ease-in-out infinite;
         }
 
         .cta-btn:hover {
-            background-color: #3a8060;
+            background-color: #FF4500;
+            border-color: #c9a961;
             animation: none;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 40px rgba(45, 106, 79, 0.7),
-                        0 0 50px rgba(45, 106, 79, 0.5);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6),
+                        0 0 50px rgba(255, 107, 53, 0.4);
         }
 
         .timer {
@@ -197,6 +264,49 @@
             box-shadow: 0 4px 15px rgba(212, 82, 79, 0.3);
         }
 
+        .scarcity-banner-top {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #d4524f 0%, #c23b3b 100%);
+            padding: 11px 12px;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: banner-pulse 4s ease-in-out infinite;
+        }
+
+        .stock-number {
+            font-size: 19px;
+            font-weight: 900;
+            color: #FFD23F;
+            padding: 0 5px;
+        }
+
+        .sold-indicator {
+            margin-left: 15px;
+            font-size: 9px;
+            opacity: 0.95;
+        }
+
+        .sold-indicator::before {
+            content: "|";
+            margin-right: 15px;
+            opacity: 0.5;
+        }
+
+        @keyframes banner-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8),
+                            0 0 50px rgba(0, 0, 0, 0.4);
+            }
+        }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -211,15 +321,14 @@
 
         @keyframes glow-pulse {
             0%, 100% {
-                box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3),
-                            0 0 20px rgba(45, 106, 79, 0.2),
-                            0 0 30px rgba(45, 106, 79, 0.1);
+                box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4),
+                            0 0 30px rgba(255, 107, 53, 0.2);
+                transform: scale(1);
             }
             50% {
-                box-shadow: 0 4px 25px rgba(45, 106, 79, 0.6),
-                            0 0 40px rgba(45, 106, 79, 0.4),
-                            0 0 60px rgba(45, 106, 79, 0.3);
-                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5),
+                            0 0 40px rgba(255, 107, 53, 0.3);
+                transform: scale(1.01);
             }
         }
 
@@ -264,14 +373,7 @@
         }
 
         .cta-arrow::before {
-            content: "⬇";
-            position: absolute;
-            top: -50px;
-            right: 20px;
-            font-size: 40px;
-            color: #c9a961;
-            animation: bounce-arrow 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
+            display: none;
         }
 
         .viewing-now {
@@ -707,7 +809,6 @@
             font-weight: 900;
             display: block;
             margin: 20px 0;
-            animation: pulse-scale 3s ease-in-out infinite;
         }
 
         .final-cta p {
@@ -719,24 +820,26 @@
 
         .final-cta-btn {
             display: inline-block;
-            background-color: #2d6a4f;
+            background-color: #FF6B35;
             color: #ffffff;
             font-size: 28px;
             font-weight: 700;
             padding: 18px 80px;
             text-decoration: none;
             border-radius: 12px;
+            border: 3px solid #FFD23F;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
             animation: glow-pulse 2s ease-in-out infinite;
         }
 
         .final-cta-btn:hover {
-            background-color: #3a8060;
+            background-color: #FF4500;
+            border-color: #c9a961;
             animation: none;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 40px rgba(45, 106, 79, 0.7),
-                        0 0 50px rgba(45, 106, 79, 0.5);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6),
+                        0 0 50px rgba(255, 107, 53, 0.4);
         }
 
         .urgency-text {
@@ -911,12 +1014,17 @@
                 width: 100%;
             }
 
-            .hero h1 {
-                font-size: 36px;
+            .hero-main {
+                font-size: 42px;
             }
 
-            .hero h2 {
-                font-size: 28px;
+            .hero-sub {
+                font-size: 24px;
+            }
+
+            .hero-badge {
+                font-size: 20px;
+                padding: 10px 25px;
             }
 
             .product-img {
@@ -1041,15 +1149,19 @@
                 gap: 10px;
             }
 
-            .hero h1 {
-                font-size: 26px;
-                letter-spacing: 1px;
-                margin-bottom: 8px;
+            .hero-main {
+                font-size: 32px;
+                margin-bottom: 15px;
             }
 
-            .hero h2 {
+            .hero-sub {
                 font-size: 20px;
-                margin-bottom: -15px;
+                margin-bottom: 20px;
+            }
+
+            .hero-badge {
+                font-size: 16px;
+                padding: 8px 20px;
             }
 
             .product-img {
@@ -1057,13 +1169,27 @@
                 margin-bottom: 8px;
             }
 
+            .price-benefits-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .benefits-list {
-                display: none;
+                order: 2;
+                position: relative;
+                transform: translateY(-50%);
+            }
+
+            .price-display {
+                order: 1;
+                position: relative;
+                z-index: 10;
+                transform: translateY(-50%);
             }
 
             .benefits-list li {
                 font-size: 14px;
-                margin-bottom: 4px;
+                margin-bottom: 6px;
             }
 
             .scarcity-banner {
@@ -1085,16 +1211,34 @@
                 margin-bottom: 25px;
             }
 
+            .price-old {
+                font-size: 24px;
+            }
+
+            .price-new {
+                font-size: 48px;
+            }
+
+            .price-save {
+                font-size: 16px;
+                padding: 6px 15px;
+            }
+
             .cta-btn {
                 font-size: 18px;
                 padding: 14px 40px;
                 min-width: 250px;
+                margin-top: -35px;
                 margin-bottom: 20px;
+                position: relative;
+                transform: translateY(-50%);
             }
 
             .timer {
                 gap: 8px;
                 margin-top: 10px;
+                position: relative;
+                transform: translateY(-50%);
             }
 
             .timer-value {
@@ -1113,6 +1257,8 @@
                 font-size: 12px;
                 padding: 8px 15px;
                 margin-top: 15px;
+                position: relative;
+                transform: translateY(-50%);
             }
 
             .trust-badge {
@@ -1219,17 +1365,48 @@
             .section-title {
                 font-size: 28px;
             }
+
+            .scarcity-banner-top {
+                font-size: 8px;
+                padding: 8px 9px;
+            }
+
+            .stock-number {
+                font-size: 14px;
+            }
+
+            .sold-indicator {
+                display: block;
+                margin-left: 0;
+                margin-top: 3px;
+                font-size: 8px;
+            }
+
+            .sold-indicator::before {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Sticky Scarcity Banner -->
+    <div class="scarcity-banner-top">
+        ⚠️ BLACK FRIDAY POPUST: Samo še <span class="stock-number" id="stock-count">23</span> paketov na zalogi!
+        <span class="sold-indicator">● <span id="sold-count">17</span> prodanih v zadnjih 3 urah</span>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-wrapper">
             <!-- Header - Centered -->
             <div class="hero-header">
-                <h1>BLACK FRIDAY AKCIJA!</h1>
-                <h2>MINUSGRIP – NARAVNA MOČ<br>ZA IMUNITET</h2>
+                <h2 class="hero-sub">Okrepite imuniteto celotne družine z MinusGrip</h2>
+                <h1 class="hero-main">Za mirno zimo brez smrkanja in kihanja</h1>
+                <div class="hero-badge">
+                    <span class="badge-icon">🔥</span>
+                    <span class="badge-text">BLACK FRIDAY: 40% POPUST</span>
+                    <span class="badge-icon">🔥</span>
+                </div>
             </div>
 
             <!-- Main Content - Left/Right -->
@@ -1237,24 +1414,27 @@
                 <!-- Left Side - Product -->
                 <div class="left-side">
                     <img src="product-new.png" alt="MinusGrip - naravni dodatek za imunski sistem" class="product-img">
-
-                    <!-- Bullet Points -->
-                    <ul class="benefits-list">
-                        <li>Naraven dodatek prehrani</li>
-                        <li>Za celo družino</li>
-                        <li>5 naravnih sestavin</li>
-                        <li>Hitro delovanje</li>
-                    </ul>
                 </div>
 
                 <!-- Right Side - Offer -->
                 <div class="right-side">
-                    <div class="scarcity-banner">⚠️ ŠE SAMO 23 KOSOV NA ZALOGI!</div>
+                    <div class="price-benefits-row">
+                        <!-- Bullet Points -->
+                        <ul class="benefits-list">
+                            <li>Naraven dodatek prehrani</li>
+                            <li>Za celo družino</li>
+                            <li>5 naravnih sestavin</li>
+                            <li>Hitro delovanje</li>
+                        </ul>
 
-                    <div class="discount">40% POPUST!</div>
-                    <div class="limited">OMEJENA PONUDBA!</div>
+                        <div class="price-display">
+                            <div class="price-old">€29.99</div>
+                            <div class="price-new">€17.99</div>
+                            <div class="price-save">Prihranite €12 (40%)</div>
+                        </div>
+                    </div>
 
-                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">KUPI ZDAJ!</a>
+                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">ZAŠČITI SVOJO DRUŽINO - 40% POPUST</a>
 
                     <div class="timer">
                         <div class="timer-unit">
@@ -1565,7 +1745,7 @@
             <h2>Ne zamudite BLACK FRIDAY ponudbe!</h2>
             <span class="highlight">40% POPUST</span>
             <p>Okrepite imunski sistem za vso družino z MinusGrip. Naravne sestavine, dokazana učinkovitost, prijetno sadje okus.</p>
-            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">IZKORISTITE AKCIJO</a>
+            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">NAROČITE MINUSGRIP - ZAŠČITITE SVOJO DRUŽINO</a>
             <p class="urgency-text">⏰ Ponudba velja le še omejeno časa!</p>
 
             <div class="timer timer-final">
@@ -1710,6 +1890,24 @@
 
         // Update viewing count every 30 seconds
         setInterval(updateViewingCount, 30000);
+
+        // Stock countdown - decrease stock every 8-12 minutes
+        let stockCount = 23;
+        const stockElement = document.getElementById('stock-count');
+        const soldElement = document.getElementById('sold-count');
+
+        function updateStock() {
+            if (stockCount > 8) {
+                stockCount--;
+                stockElement.textContent = stockCount;
+
+                const currentSold = parseInt(soldElement.textContent);
+                soldElement.textContent = currentSold + 1;
+            }
+        }
+
+        // Decrease stock by 1 every 8-12 minutes (randomized)
+        setInterval(updateStock, Math.random() * 240000 + 480000);
     </script>
 </body>
 </html>
