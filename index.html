@@ -70,6 +70,7 @@
             color: #ffffff;
             box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
             margin-bottom: 40px;
+            animation: badge-mega-pulse 3s ease-in-out infinite;
         }
 
         .badge-icon {
@@ -393,6 +394,18 @@
             }
         }
 
+        @keyframes badge-mega-pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 45px rgba(255, 0, 0, 0.7),
+                            0 0 60px rgba(255, 0, 0, 0.4);
+            }
+        }
+
         .cta-arrow {
             position: relative;
             display: inline-block;
@@ -470,6 +483,167 @@
             font-weight: 600;
             color: #ffffff;
             line-height: 1.4;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .payment-methods-text {
+            font-size: 12px;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .payment-icon {
+            height: 32px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .payment-icon:hover {
+            opacity: 1;
+        }
+
+        /* Exit Intent Popup */
+        .exit-intent-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .exit-intent-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exit-intent-popup {
+            background: linear-gradient(135deg, #1a3a32 0%, #0d211c 100%);
+            border: 3px solid #c9a961;
+            border-radius: 16px;
+            padding: 50px 40px;
+            max-width: 550px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .exit-intent-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: #b0b0b0;
+            font-size: 32px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .exit-intent-close:hover {
+            color: #ffffff;
+        }
+
+        .exit-intent-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .exit-intent-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .exit-intent-subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .exit-intent-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .exit-intent-input {
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #c9a961;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0d211c;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .exit-intent-input::placeholder {
+            color: #666;
+        }
+
+        .exit-intent-btn {
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 700;
+            background-color: #FF6B35;
+            color: #ffffff;
+            border: 3px solid #FFD23F;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .exit-intent-btn:hover {
+            background-color: #FF4500;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+        }
+
+        .exit-intent-guarantee {
+            font-size: 13px;
+            color: #808080;
+            margin-top: 15px;
         }
 
         /* Stats Section */
@@ -1503,6 +1677,14 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <span class="payment-methods-text">Sprejemamo:</span>
+                <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32"><rect fill="#00579F" width="48" height="32" rx="4"/><text x="24" y="20" font-family="Arial" font-size="10" font-weight="bold" fill="white" text-anchor="middle">VISA</text></svg>
+                <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32"><rect fill="#EB001B" width="24" height="32" rx="4"/><rect fill="#FF5F00" x="12" width="24" height="32" rx="4"/><rect fill="#F79E1B" x="24" width="24" height="32" rx="4"/></svg>
+                <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32"><rect fill="#003087" width="48" height="32" rx="4"/><text x="24" y="20" font-family="Arial" font-size="8" font-weight="bold" fill="white" text-anchor="middle">PayPal</text></svg>
+            </div>
         </div>
     </section>
 
@@ -1851,6 +2033,21 @@
         </div>
     </footer>
 
+    <!-- Exit Intent Popup -->
+    <div class="exit-intent-overlay" id="exitIntentOverlay">
+        <div class="exit-intent-popup">
+            <button class="exit-intent-close" onclick="closeExitIntent()">×</button>
+            <div class="exit-intent-icon">⚠️</div>
+            <h2 class="exit-intent-title">POČAKAJTE!</h2>
+            <p class="exit-intent-subtitle">Dobite <strong style="color: #FFD700;">dodatnih 10% popust</strong> na vaš prvi nakup.<br>Skupaj že <strong style="color: #FF6B35;">50% prihranite!</strong></p>
+            <form class="exit-intent-form" onsubmit="submitExitIntent(event)">
+                <input type="email" class="exit-intent-input" placeholder="Vnesite vaš email" required id="exitEmail">
+                <button type="submit" class="exit-intent-btn">POŠLJI MI KOD ZA 10% POPUST</button>
+            </form>
+            <p class="exit-intent-guarantee">🔒 Vaš email je varen. Brez spam sporočil.</p>
+        </div>
+    </div>
+
     <script>
         // FAQ Toggle Functionality
         document.querySelectorAll('.faq-question').forEach(question => {
@@ -1930,23 +2127,88 @@
         // Update viewing count every 30 seconds
         setInterval(updateViewingCount, 30000);
 
-        // Stock countdown - decrease stock every 8-12 minutes
+        // Stock countdown - realistic timing based on peak hours
         let stockCount = 23;
+        let soldCount = 17;
         const stockElement = document.getElementById('stock-count');
         const soldElement = document.getElementById('sold-count');
 
-        function updateStock() {
-            if (stockCount > 8) {
-                stockCount--;
-                stockElement.textContent = stockCount;
+        function updateStockRealistic() {
+            const hour = new Date().getHours();
 
-                const currentSold = parseInt(soldElement.textContent);
-                soldElement.textContent = currentSold + 1;
+            // Peak hours (10-14, 18-21) = higher sales probability
+            const isPeakHour = (hour >= 10 && hour <= 14) || (hour >= 18 && hour <= 21);
+            const sellProbability = isPeakHour ? 0.7 : 0.4;
+
+            // Only update if we're above minimum stock and random check passes
+            if (Math.random() < sellProbability && stockCount > 8) {
+                stockCount--;
+                soldCount++;
+                stockElement.textContent = stockCount;
+                soldElement.textContent = soldCount;
             }
         }
 
-        // Decrease stock by 1 every 8-12 minutes (randomized)
-        setInterval(updateStock, Math.random() * 240000 + 480000);
+        // Run every 12-18 minutes (randomized for natural feel)
+        function scheduleNextStockUpdate() {
+            const delay = Math.random() * 360000 + 720000; // 12-18 minutes
+            setTimeout(() => {
+                updateStockRealistic();
+                scheduleNextStockUpdate();
+            }, delay);
+        }
+
+        scheduleNextStockUpdate();
+
+        // Exit Intent Detection
+        let exitIntentShown = sessionStorage.getItem('exitIntentShown') === 'true';
+
+        document.addEventListener('mouseleave', (e) => {
+            // Trigger when mouse leaves viewport from top
+            if (e.clientY <= 0 && !exitIntentShown) {
+                exitIntentShown = true;
+                sessionStorage.setItem('exitIntentShown', 'true');
+                showExitIntent();
+            }
+        });
+
+        function showExitIntent() {
+            document.getElementById('exitIntentOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeExitIntent() {
+            document.getElementById('exitIntentOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function submitExitIntent(event) {
+            event.preventDefault();
+            const email = document.getElementById('exitEmail').value;
+
+            // Here you would normally send email to your backend/email service
+            console.log('Exit intent email captured:', email);
+
+            // Show success message and redirect to product page with discount code
+            alert('Hvala! Vaša koda za 10% popust: MINUS10\n\nPreusmerjamo vas na izdelek...');
+
+            // Redirect to product page
+            window.location.href = 'https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/?discount=MINUS10';
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('exitIntentOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'exitIntentOverlay') {
+                closeExitIntent();
+            }
+        });
+
+        // Close popup with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeExitIntent();
+            }
+        });
     </script>
 </body>
 </html>
