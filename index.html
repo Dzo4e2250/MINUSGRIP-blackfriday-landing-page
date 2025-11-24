@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK FRIDAY - MinusGrip | Avena</title>
+    <meta name="description" content="MinusGrip - naravna moč za imunitet. BLACK FRIDAY akcija: 40% popust! Pomaga pri krepitvi imunskega sistema z vitamin C, cinkom in naravnimi izvlečki.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background-color: #1a3a32;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-image: url('hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .hero-wrapper {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-header {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        .hero h1 {
+            font-size: 79px;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 0px;
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .hero h2 {
+            font-size: 79px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-side {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-img {
+            max-width: 1842px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+            transform: scale(0.972);
+        }
+
+        /* Bullet Points under Product */
+        .benefits-list {
+            list-style: none;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .benefits-list li {
+            font-size: 24px;
+            color: #c9a961;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .benefits-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #c9a961;
+            font-size: 32px;
+        }
+
+        .discount {
+            font-size: 82px;
+            font-weight: 900;
+            color: #8B0000;
+            margin-bottom: 15px;
+            line-height: 1;
+            white-space: nowrap;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .limited {
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 40px;
+            white-space: nowrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            padding: 11px 50px;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+            width: auto;
+            min-width: 550px;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        .cta-btn:hover {
+            background-color: #3a8060;
+            animation: none;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(45, 106, 79, 0.7),
+                        0 0 50px rgba(45, 106, 79, 0.5);
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 12px;
+        }
+
+        .timer-unit {
+            text-align: center;
+        }
+
+        .timer-value {
+            font-size: 44px;
+            font-weight: 700;
+            color: #ffffff;
+            animation: timer-glow 2s ease-in-out infinite;
+        }
+
+        .timer-label {
+            font-size: 11px;
+            color: #999999;
+            margin-top: 5px;
+        }
+
+        .timer-sep {
+            font-size: 44px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* Scarcity Indicators */
+        .scarcity-banner {
+            background: linear-gradient(135deg, #d4524f 0%, #c23b3b 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(212, 82, 79, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(212, 82, 79, 0.3);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 6px 25px rgba(212, 82, 79, 0.6),
+                            0 0 30px rgba(212, 82, 79, 0.4);
+            }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3),
+                            0 0 20px rgba(45, 106, 79, 0.2),
+                            0 0 30px rgba(45, 106, 79, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(45, 106, 79, 0.6),
+                            0 0 40px rgba(45, 106, 79, 0.4),
+                            0 0 60px rgba(45, 106, 79, 0.3);
+                transform: translateY(-2px);
+            }
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(10px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes timer-glow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                             0 0 20px rgba(201, 169, 97, 0.2);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+                             0 0 30px rgba(201, 169, 97, 0.4),
+                             0 0 40px rgba(201, 169, 97, 0.2);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                text-shadow: 0 0 20px rgba(212, 82, 79, 0.5),
+                             0 0 30px rgba(201, 169, 97, 0.4),
+                             -10px 0 40px rgba(255, 100, 100, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(201, 169, 97, 0.9),
+                             0 0 40px rgba(212, 82, 79, 0.6),
+                             10px 0 50px rgba(255, 200, 100, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(212, 82, 79, 0.5),
+                             0 0 30px rgba(201, 169, 97, 0.4),
+                             -10px 0 40px rgba(255, 100, 100, 0.4);
+            }
+        }
+
+        .cta-arrow {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cta-arrow::before {
+            content: "⬇";
+            position: absolute;
+            top: -50px;
+            right: 20px;
+            font-size: 40px;
+            color: #c9a961;
+            animation: bounce-arrow 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
+        }
+
+        .viewing-now {
+            background-color: rgba(201, 169, 97, 0.15);
+            border: 1px solid #c9a961;
+            color: #c9a961;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .viewing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #c9a961;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Trust Badges Section */
+        .trust-badges {
+            background-color: #1a3a32;
+            padding: 50px 20px;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
+
+        .trust-badges-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .trust-badge-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+        }
+
+        .trust-badge-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .trust-badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: #0d211c;
+            padding: 60px 20px;
+        }
+
+        .stats-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #c9a961;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #b0b0b0;
+            font-weight: 600;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #0d211c;
+            padding: 80px 20px;
+        }
+
+        .testimonials-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background-color: transparent;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .stars {
+            color: #c9a961;
+            font-size: 32px;
+            margin-bottom: 25px;
+            letter-spacing: 4px;
+        }
+
+        .testimonial-text {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 18px;
+            color: #c9a961;
+            font-weight: 600;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background-color: #1a3a32;
+            padding: 80px 20px;
+        }
+
+        .why-choose-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0b0b0;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background-color: #0f2822;
+            padding: 80px 20px;
+        }
+
+        .comparison-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .comparison-table {
+            margin-top: 60px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-header {
+            background-color: rgba(201, 169, 97, 0.1);
+            font-weight: 700;
+            color: #c9a961;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .comparison-cell {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .comparison-cell:first-child {
+            justify-content: flex-start;
+            border-left: none;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .check-yes {
+            color: #2d6a4f;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .check-no {
+            color: #e63946;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .highlight-col {
+            background-color: rgba(45, 106, 79, 0.1);
+        }
+
+        /* Ingredients Section */
+        .ingredients {
+            background-color: #0d211c;
+            padding: 80px 20px;
+        }
+
+        .ingredients-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .ingredient-item {
+            text-align: left;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #c9a961;
+            border-radius: 8px;
+        }
+
+        .ingredient-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 15px;
+        }
+
+        .ingredient-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0b0b0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #1a3a32;
+            padding: 80px 20px;
+        }
+
+        .faq-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .faq-list {
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .faq-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-left: 3px solid #c9a961;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: #c9a961;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin: 0;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background-color: #1a3a32;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .final-cta-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .final-cta .highlight {
+            color: #8B0000;
+            font-size: 56px;
+            font-weight: 900;
+            display: block;
+            margin: 20px 0;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .final-cta-btn {
+            display: inline-block;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 18px 80px;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        .final-cta-btn:hover {
+            background-color: #3a8060;
+            animation: none;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(45, 106, 79, 0.7),
+                        0 0 50px rgba(45, 106, 79, 0.5);
+        }
+
+        .urgency-text {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #c9a961;
+            font-weight: 600;
+        }
+
+        .timer-final {
+            margin-top: 20px;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background-color: #0d211c;
+            padding: 80px 20px;
+        }
+
+        .guarantee-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .guarantee-box {
+            background: linear-gradient(135deg, rgba(45, 106, 79, 0.2) 0%, rgba(201, 169, 97, 0.2) 100%);
+            border: 2px solid #c9a961;
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-top: 40px;
+        }
+
+        .guarantee-badge {
+            width: 120px;
+            height: 120px;
+            background-color: #c9a961;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 60px;
+        }
+
+        .guarantee-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .guarantee-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .guarantee-point {
+            text-align: center;
+        }
+
+        .guarantee-point-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .guarantee-point-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a1f1a;
+            padding: 60px 20px 30px;
+            color: #b0b0b0;
+        }
+
+        .footer-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #b0b0b0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: #c9a961;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(201, 169, 97, 0.1);
+            border-radius: 50%;
+            color: #c9a961;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #c9a961;
+            color: #0a1f1a;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #808080;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .left-side,
+            .right-side {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .product-img {
+                max-width: 350px;
+            }
+
+            .benefits-list {
+                text-align: center;
+                padding-left: 0;
+            }
+
+            .benefits-list li {
+                font-size: 16px;
+            }
+
+            .discount {
+                font-size: 56px;
+            }
+
+            .limited {
+                font-size: 26px;
+            }
+
+            .cta-btn {
+                font-size: 22px;
+                padding: 16px 60px;
+            }
+
+            .timer-value {
+                font-size: 36px;
+            }
+
+            .timer-sep {
+                font-size: 36px;
+            }
+
+            .trust-badges-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-cell {
+                border-left: none;
+                border-top: 1px solid rgba(201, 169, 97, 0.2);
+            }
+
+            .comparison-cell:first-child {
+                border-top: none;
+                background-color: rgba(201, 169, 97, 0.05);
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta .highlight {
+                font-size: 42px;
+            }
+
+            .final-cta p {
+                font-size: 18px;
+            }
+
+            .final-cta-btn {
+                font-size: 24px;
+                padding: 16px 50px;
+            }
+
+            .guarantee-points {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .guarantee-title {
+                font-size: 28px;
+            }
+
+            .guarantee-box {
+                padding: 40px 25px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .hero-content {
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+                margin-bottom: -15px;
+            }
+
+            .product-img {
+                transform: scale(0.9);
+                margin-bottom: 8px;
+            }
+
+            .benefits-list {
+                display: none;
+            }
+
+            .benefits-list li {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+
+            .scarcity-banner {
+                font-size: 13px;
+                padding: 10px 15px;
+                margin-bottom: 15px;
+                margin-top: -40px;
+                position: relative;
+                z-index: 10;
+            }
+
+            .discount {
+                font-size: 44px;
+                margin-bottom: 10px;
+            }
+
+            .limited {
+                font-size: 22px;
+                margin-bottom: 25px;
+            }
+
+            .cta-btn {
+                font-size: 18px;
+                padding: 14px 40px;
+                min-width: 250px;
+                margin-bottom: 20px;
+            }
+
+            .timer {
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .timer-value {
+                font-size: 26px;
+            }
+
+            .timer-label {
+                font-size: 10px;
+            }
+
+            .timer-sep {
+                font-size: 26px;
+            }
+
+            .viewing-now {
+                font-size: 12px;
+                padding: 8px 15px;
+                margin-top: 15px;
+            }
+
+            .trust-badge {
+                padding: 15px;
+            }
+
+            .trust-badge-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .trust-badge-text {
+                font-size: 12px;
+            }
+
+            .stat-number {
+                font-size: 38px;
+            }
+
+            .stat-label {
+                font-size: 13px;
+            }
+
+            .testimonial-text {
+                font-size: 18px;
+            }
+
+            .stars {
+                font-size: 28px;
+            }
+
+            .testimonial-author {
+                font-size: 16px;
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .feature-title {
+                font-size: 18px;
+            }
+
+            .feature-description {
+                font-size: 14px;
+            }
+
+            .ingredient-name {
+                font-size: 20px;
+            }
+
+            .ingredient-description {
+                font-size: 14px;
+            }
+
+            .faq-question h3 {
+                font-size: 17px;
+            }
+
+            .faq-answer p {
+                font-size: 15px;
+            }
+
+            .guarantee-badge {
+                width: 100px;
+                height: 100px;
+                font-size: 50px;
+            }
+
+            .guarantee-title {
+                font-size: 24px;
+            }
+
+            .guarantee-text {
+                font-size: 16px;
+            }
+
+            .guarantee-point-icon {
+                font-size: 40px;
+            }
+
+            .guarantee-point-text {
+                font-size: 14px;
+            }
+
+            .final-cta h2 {
+                font-size: 24px;
+            }
+
+            .final-cta .highlight {
+                font-size: 36px;
+            }
+
+            .final-cta p {
+                font-size: 16px;
+            }
+
+            .final-cta-btn {
+                font-size: 20px;
+                padding: 16px 50px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-wrapper">
+            <!-- Header - Centered -->
+            <div class="hero-header">
+                <h1>BLACK FRIDAY AKCIJA!</h1>
+                <h2>MINUSGRIP – NARAVNA MOČ<br>ZA IMUNITET</h2>
+            </div>
+
+            <!-- Main Content - Left/Right -->
+            <div class="hero-content">
+                <!-- Left Side - Product -->
+                <div class="left-side">
+                    <img src="product-new.png" alt="MinusGrip - naravni dodatek za imunski sistem" class="product-img">
+
+                    <!-- Bullet Points -->
+                    <ul class="benefits-list">
+                        <li>Naraven dodatek prehrani</li>
+                        <li>Za celo družino</li>
+                        <li>5 naravnih sestavin</li>
+                        <li>Hitro delovanje</li>
+                    </ul>
+                </div>
+
+                <!-- Right Side - Offer -->
+                <div class="right-side">
+                    <div class="scarcity-banner">⚠️ ŠE SAMO 23 KOSOV NA ZALOGI!</div>
+
+                    <div class="discount">40% POPUST!</div>
+                    <div class="limited">OMEJENA PONUDBA!</div>
+
+                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">KUPI ZDAJ!</a>
+
+                    <div class="timer">
+                        <div class="timer-unit">
+                            <div class="timer-value" id="days">07</div>
+                            <div class="timer-label">dni</div>
+                        </div>
+                        <div class="timer-sep">:</div>
+                        <div class="timer-unit">
+                            <div class="timer-value" id="hours">14</div>
+                            <div class="timer-label">ur</div>
+                        </div>
+                        <div class="timer-sep">:</div>
+                        <div class="timer-unit">
+                            <div class="timer-value" id="minutes">36</div>
+                            <div class="timer-label">minut</div>
+                        </div>
+                        <div class="timer-sep">:</div>
+                        <div class="timer-unit">
+                            <div class="timer-value" id="seconds">32</div>
+                            <div class="timer-label">sekund</div>
+                        </div>
+                    </div>
+
+                    <div class="viewing-now">
+                        <span class="viewing-dot"></span>
+                        <span><strong><span id="viewing-count">47</span> oseb</strong> si trenutno ogleduje to ponudbo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-wrapper">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Zadovoljnih strank</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Povprečna ocena</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Priporočilo znancem</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Hitra dostava</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges">
+        <div class="trust-badges-wrapper">
+            <div class="trust-badges-grid">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <img src="trust-delivery.png" alt="Free Shipping Icon">
+                    </div>
+                    <div class="trust-badge-text">BREZPLAČNA DOSTAVA<br>nad 50€</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <img src="trust-guarantee.png" alt="30-Day Guarantee Icon">
+                    </div>
+                    <div class="trust-badge-text">30-DNEVNA GARANCIJA<br>vračila denarja</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <img src="trust-payment.png" alt="Secure Payment Icon">
+                    </div>
+                    <div class="trust-badge-text">VARNO PLAČILO<br>SSL šifriranje</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <img src="trust-certificate.png" alt="Certified Product Icon">
+                    </div>
+                    <div class="trust-badge-text">CERTIFICIRAN IZDELEK<br>Soria Natural</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-wrapper">
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Odkar sem začela otrokoma redno dajati MinusGrip, sta to jesen veliko bolj odporna in sta zbolela le za blagim prehladom."</p>
+                    <p class="testimonial-author">Maja, Ljubljana</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"V službi so vsi bolni, jaz pa se zaenkrat dobro držim, odkar vsako jutro spijem MinusGrip. Trkam na les!"</p>
+                    <p class="testimonial-author">Gregor, Maribor</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Končno nekaj, kar hčerka z veseljem popije! Po enem tednu uporabe je bila spet polna energije in pripravljena za vrtec."</p>
+                    <p class="testimonial-author">Anja, Celje</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="why-choose-wrapper">
+            <h2 class="section-title">Zakaj izbrati MinusGrip?</h2>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-shield.png" alt="Shield icon">
+                    </div>
+                    <h3 class="feature-title">Naraven dodatek prehrani</h3>
+                    <p class="feature-description">100% naravne sestavine iz granatnega jabloka, črnega bezga in vitamina C za močno imunsko zaščito.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-hand-leaves.png" alt="Hand with leaves icon">
+                    </div>
+                    <h3 class="feature-title">5 naravnih sestavin</h3>
+                    <p class="feature-description">Sinergija vitamina C (125% dnevne vrednosti), cinka, laktoferina, elagitatninov in antocianov za optimalno delovanje.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-award.png" alt="Award badge icon">
+                    </div>
+                    <h3 class="feature-title">Hitro delovanje</h3>
+                    <p class="feature-description">Tekočina v stekleničkah omogoča hitro absorpcijo aktivnih sestavin. Prijetno sadje okus všeč tudi otrokom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients">
+        <div class="ingredients-wrapper">
+            <h2 class="section-title">Moč naravnih sestavin</h2>
+
+            <div class="ingredients-grid">
+                <!-- Ingredient 1 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Vitamin C (125% dnevne vrednosti)</h3>
+                    <p class="ingredient-description">Močan antioksidant, ki podpira delovanje imunskega sistema, ščiti celice pred oksidativnim stresom in pomaga pri absorpciji železa. Ključen za ohranjanje zdravja.</p>
+                </div>
+
+                <!-- Ingredient 2 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Cink</h3>
+                    <p class="ingredient-description">Esencialno mineralno snov, ki prispeva k normalnemu delovanju imunskega sistema, ščiti celice pred oksidativnim stresom in pomaga pri ohranjanju zdravih kosti.</p>
+                </div>
+
+                <!-- Ingredient 3 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Laktoferin</h3>
+                    <p class="ingredient-description">Naravni protein z antimikrobnimi lastnostmi, ki podpira imunski sistem in pomaga telesu pri obrambi pred patogeni. Ugodno vpliva na črevesno mikrobioto.</p>
+                </div>
+
+                <!-- Ingredient 4 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Granatno jabolko (elagitatnini)</h3>
+                    <p class="ingredient-description">Bogato z elagitatnini, močnimi antioksidanti, ki ščitijo celice in podpirajo kardiovaskularno zdravje. Tradicionalno uporabljeno za krepitev imunitete.</p>
+                </div>
+
+                <!-- Ingredient 5 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Črni bezeg (antociani)</h3>
+                    <p class="ingredient-description">Naravni vir antocianov z antivirusnimi lastnostmi. Tradicionalno uporabljen pri prehladu in gripi, pomaga zmanjšati trajanje in intenzivnost simptomov.</p>
+                </div>
+
+                <!-- Ingredient 6 -->
+                <div class="ingredient-item">
+                    <h3 class="ingredient-name">Naravni sadni okus</h3>
+                    <p class="ingredient-description">Prijetno sadje okus brez umetnih dodatkov zagotavlja, da je izdelek všeč tudi otrokom. Enostavna uporaba za vso družino.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-wrapper">
+            <h2 class="section-title">Pogosto zastavljena vprašanja</h2>
+
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Kako se MinusGrip uporablja?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>MinusGrip se uporablja enostavno - vsebino ene stekleničke (15ml) zaužijete neposredno ali razredčeno v kozarcu vode. Priporočena dnevna količina je 1 steklenička na dan. Za otroke nad 3 leta starosti priporočamo polovično dozo.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Ali je MinusGrip primeren za otroke?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Da, MinusGrip je primeren za otroke nad 3 leta starosti. Prijetni sadni okus je všeč tudi otrokom, kar olajša vsakodnevno uporabo. Za otroke priporočamo polovično dozo (7,5ml).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Koliko časa traja ena embalaža?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ena embalaža vsebuje 10 stekleničk po 15ml. Pri priporočenem dnevnem odmerku (1 steklenička) zadostuje za 10-dnevno kuro. Za otroke z polovičnim odmerkom zadostuje za 20 dni.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Kdaj je najboljši čas za jemanje?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>MinusGrip lahko jemljete kadarkoli v dnevu. Mnogi uporabniki preferirajo jutranjo uporabo na prazen želodec za optimalno absorpcijo, vendar ga lahko jemljete tudi med obroki ali zvečer.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Kakšni so roki dostave?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Naročila obdelujemo vsak delovni dan. Dostava po Sloveniji običajno traja 1-3 delovne dni. Med Black Friday akcijo lahko pride do rahlih zamud zaradi povečanega števila naročil.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Ali lahko uporabljam MinusGrip preventivno?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Da, MinusGrip je odličen za preventivno krepitev imunskega sistema, posebej v zimskih mesecih ali obdobjih povečane obremenitve. Priporočamo redno uporabo v kuraciji 10-20 dni ali po potrebi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="guarantee-wrapper">
+            <h2 class="section-title">Brez tveganja. 100% zadovoljstvo zagotovljeno.</h2>
+
+            <div class="guarantee-box">
+                <div class="guarantee-badge">🛡️</div>
+                <h3 class="guarantee-title">30-Dnevna Garancija Vračila Denarja</h3>
+                <p class="guarantee-text">
+                    Verjamemo v moč MinusGrip. Če v 30 dneh ne boste popolnoma zadovoljni z rezultati,
+                    vam bomo vrnili celotni znesek - brez vprašanj, brez zapletov.
+                    Tveganje je popolnoma naše, zadovoljstvo pa vaše!
+                </p>
+
+                <div class="guarantee-points">
+                    <div class="guarantee-point">
+                        <div class="guarantee-point-icon">✓</div>
+                        <div class="guarantee-point-text">Preprost postopek vračila</div>
+                    </div>
+                    <div class="guarantee-point">
+                        <div class="guarantee-point-icon">✓</div>
+                        <div class="guarantee-point-text">Hitro povračilo denarja</div>
+                    </div>
+                    <div class="guarantee-point">
+                        <div class="guarantee-point-icon">✓</div>
+                        <div class="guarantee-point-text">Brez skritih stroškov</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-wrapper">
+            <h2>Ne zamudite BLACK FRIDAY ponudbe!</h2>
+            <span class="highlight">40% POPUST</span>
+            <p>Okrepite imunski sistem za vso družino z MinusGrip. Naravne sestavine, dokazana učinkovitost, prijetno sadje okus.</p>
+            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">IZKORISTITE AKCIJO</a>
+            <p class="urgency-text">⏰ Ponudba velja le še omejeno časa!</p>
+
+            <div class="timer timer-final">
+                <div class="timer-unit">
+                    <div class="timer-value" id="days-final">07</div>
+                    <div class="timer-label">dni</div>
+                </div>
+                <div class="timer-sep">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="hours-final">14</div>
+                    <div class="timer-label">ur</div>
+                </div>
+                <div class="timer-sep">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="minutes-final">36</div>
+                    <div class="timer-label">minut</div>
+                </div>
+                <div class="timer-sep">:</div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="seconds-final">32</div>
+                    <div class="timer-label">sekund</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <!-- Column 1: About -->
+                <div class="footer-column">
+                    <div class="footer-logo">AVENA</div>
+                    <p>Vaš zanesljiv partner za naravne dodatke prehrani in zdravo življenje. Nudimo samo kakovostne izdelke preverjenihproizvajalcev.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/avena.si" target="_blank" aria-label="Facebook">f</a>
+                        <a href="https://www.instagram.com/avena.si" target="_blank" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h3>Hitre povezave</h3>
+                    <a href="https://avena.si/">Domov</a>
+                    <a href="https://avena.si/trgovina/">Trgovina</a>
+                    <a href="https://avena.si/o-nas/">O nas</a>
+                    <a href="https://avena.si/kontakt/">Kontakt</a>
+                    <a href="https://avena.si/pogoji-poslovanja/">Pogoji poslovanja</a>
+                    <a href="https://avena.si/politika-zasebnosti/">Politika zasebnosti</a>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <p><strong>E-pošta:</strong><br>info@avena.si</p>
+                    <p><strong>Telefon:</strong><br>+386 1 234 5678</p>
+                    <p><strong>Delovni čas:</strong><br>Pon - Pet: 9:00 - 17:00</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Avena.si - Vse pravice pridržane</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Countdown Timer
+        function startCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7);
+            endDate.setHours(23, 59, 59, 999);
+
+            function updateTimer() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    // Update hero timer
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                    // Update final CTA timer
+                    document.getElementById('days-final').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours-final').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes-final').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds-final').textContent = String(seconds).padStart(2, '0');
+                } else {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+
+                    document.getElementById('days-final').textContent = '00';
+                    document.getElementById('hours-final').textContent = '00';
+                    document.getElementById('minutes-final').textContent = '00';
+                    document.getElementById('seconds-final').textContent = '00';
+                }
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        startCountdown();
+
+        // Random viewing count
+        function updateViewingCount() {
+            const min = 5;
+            const max = 80;
+            const randomCount = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById('viewing-count').textContent = randomCount;
+        }
+
+        // Set initial random count
+        updateViewingCount();
+
+        // Update viewing count every 15 seconds
+        setInterval(updateViewingCount, 15000);
+    </script>
+</body>
+</html>
