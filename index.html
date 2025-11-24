@@ -164,13 +164,27 @@
         }
 
         .price-old {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 700;
             color: #FF0000;
             text-decoration: line-through;
-            text-decoration-thickness: 3px;
+            text-decoration-thickness: 4px;
             margin-bottom: 5px;
-            opacity: 0.8;
+            margin-top: 25px;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .price-old::before {
+            content: "REDNA CENA";
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: 600;
+            color: #b0b0b0;
+            letter-spacing: 1px;
         }
 
         .price-new {
@@ -179,8 +193,20 @@
             color: #FFD700;
             line-height: 1;
             margin-bottom: 15px;
+            margin-top: 10px;
             text-shadow: 0 4px 20px rgba(255, 215, 0, 0.4),
                          0 0 40px rgba(255, 215, 0, 0.2);
+            position: relative;
+        }
+
+        .price-new::before {
+            content: "BLACK FRIDAY CENA";
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFD23F;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
         }
 
         .price-save {
@@ -1212,11 +1238,21 @@
             }
 
             .price-old {
-                font-size: 24px;
+                font-size: 28px;
+                margin-top: 20px;
+            }
+
+            .price-old::before {
+                font-size: 10px;
+                top: -18px;
             }
 
             .price-new {
                 font-size: 48px;
+            }
+
+            .price-new::before {
+                font-size: 11px;
             }
 
             .price-save {
@@ -1367,19 +1403,22 @@
             }
 
             .scarcity-banner-top {
-                font-size: 8px;
-                padding: 8px 9px;
+                font-size: 11px;
+                padding: 10px 12px;
+                letter-spacing: 0.3px;
             }
 
             .stock-number {
-                font-size: 14px;
+                font-size: 16px;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
             }
 
             .sold-indicator {
                 display: block;
                 margin-left: 0;
                 margin-top: 3px;
-                font-size: 8px;
+                font-size: 9px;
+                letter-spacing: 0.2px;
             }
 
             .sold-indicator::before {
@@ -1391,7 +1430,7 @@
 <body>
     <!-- Sticky Scarcity Banner -->
     <div class="scarcity-banner-top">
-        ⚠️ BLACK FRIDAY POPUST: Samo še <span class="stock-number" id="stock-count">23</span> paketov na zalogi!
+        ⚠️ BLACK FRIDAY: KRITIČNO NIZKA ZALOGA - Samo še <span class="stock-number" id="stock-count">23</span> paketov!
         <span class="sold-indicator">● <span id="sold-count">17</span> prodanih v zadnjih 3 urah</span>
     </div>
 
@@ -1434,7 +1473,7 @@
                         </div>
                     </div>
 
-                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">ZAŠČITI SVOJO DRUŽINO - 40% POPUST</a>
+                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">KUPI ZDAJ - PRIHRANI 40%</a>
 
                     <div class="timer">
                         <div class="timer-unit">
@@ -1745,7 +1784,7 @@
             <h2>Ne zamudite BLACK FRIDAY ponudbe!</h2>
             <span class="highlight">40% POPUST</span>
             <p>Okrepite imunski sistem za vso družino z MinusGrip. Naravne sestavine, dokazana učinkovitost, prijetno sadje okus.</p>
-            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">NAROČITE MINUSGRIP - ZAŠČITITE SVOJO DRUŽINO</a>
+            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">KUPI ZDAJ - PRIHRANI 40%</a>
             <p class="urgency-text">⏰ Ponudba velja le še omejeno časa!</p>
 
             <div class="timer timer-final">
