@@ -113,11 +113,11 @@
         .discount {
             font-size: 82px;
             font-weight: 900;
-            color: #8B0000;
+            color: #FF0000;
             margin-bottom: 15px;
             line-height: 1;
             white-space: nowrap;
-            animation: shimmer 3s ease-in-out infinite;
+            animation: pulse-scale 3s ease-in-out infinite;
         }
 
         .limited {
@@ -195,7 +195,6 @@
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(212, 82, 79, 0.3);
-            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -247,21 +246,15 @@
             }
         }
 
-        @keyframes shimmer {
+        @keyframes pulse-scale {
             0% {
-                text-shadow: 0 0 20px rgba(212, 82, 79, 0.5),
-                             0 0 30px rgba(201, 169, 97, 0.4),
-                             -10px 0 40px rgba(255, 100, 100, 0.4);
+                transform: scale(1);
             }
             50% {
-                text-shadow: 0 0 30px rgba(201, 169, 97, 0.9),
-                             0 0 40px rgba(212, 82, 79, 0.6),
-                             10px 0 50px rgba(255, 200, 100, 0.6);
+                transform: scale(1.08);
             }
             100% {
-                text-shadow: 0 0 20px rgba(212, 82, 79, 0.5),
-                             0 0 30px rgba(201, 169, 97, 0.4),
-                             -10px 0 40px rgba(255, 100, 100, 0.4);
+                transform: scale(1);
             }
         }
 
@@ -709,12 +702,12 @@
         }
 
         .final-cta .highlight {
-            color: #8B0000;
+            color: #FF0000;
             font-size: 56px;
             font-weight: 900;
             display: block;
             margin: 20px 0;
-            animation: shimmer 3s ease-in-out infinite;
+            animation: pulse-scale 3s ease-in-out infinite;
         }
 
         .final-cta p {
@@ -1694,19 +1687,29 @@
 
         startCountdown();
 
-        // Random viewing count
+        // Natural viewing count that increases/decreases by 3
+        let currentViewingCount = Math.floor(Math.random() * (50 - 20 + 1)) + 20; // Start between 20-50
+
         function updateViewingCount() {
             const min = 5;
             const max = 80;
-            const randomCount = Math.floor(Math.random() * (max - min + 1)) + min;
-            document.getElementById('viewing-count').textContent = randomCount;
+
+            // Randomly increase or decrease by 3
+            const change = Math.random() > 0.5 ? 3 : -3;
+            currentViewingCount += change;
+
+            // Keep within bounds
+            if (currentViewingCount < min) currentViewingCount = min + 3;
+            if (currentViewingCount > max) currentViewingCount = max - 3;
+
+            document.getElementById('viewing-count').textContent = currentViewingCount;
         }
 
-        // Set initial random count
-        updateViewingCount();
+        // Set initial count
+        document.getElementById('viewing-count').textContent = currentViewingCount;
 
-        // Update viewing count every 15 seconds
-        setInterval(updateViewingCount, 15000);
+        // Update viewing count every 30 seconds
+        setInterval(updateViewingCount, 30000);
     </script>
 </body>
 </html>
