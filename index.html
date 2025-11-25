@@ -1360,8 +1360,22 @@
             }
 
             .hero-badge {
-                font-size: 16px;
-                padding: 8px 20px;
+                font-size: 13px;
+                padding: 8px 15px;
+                white-space: nowrap;
+            }
+
+            .badge-text {
+                display: none;
+            }
+
+            .badge-icon {
+                display: none;
+            }
+
+            .hero-badge::after {
+                content: "BLACK FRIDAY -40%";
+                letter-spacing: 1px;
             }
 
             .product-img {
@@ -1435,13 +1449,22 @@
             }
 
             .cta-btn {
-                font-size: 18px;
-                padding: 14px 40px;
-                min-width: 250px;
+                font-size: 15px;
+                padding: 14px 25px;
+                min-width: 200px;
                 margin-top: -35px;
                 margin-bottom: 20px;
                 position: relative;
                 transform: translateY(-50%);
+                white-space: nowrap;
+            }
+
+            .cta-btn::after {
+                content: "KUPI -40%";
+            }
+
+            .cta-btn .cta-text {
+                display: none;
             }
 
             .timer {
@@ -1568,8 +1591,18 @@
             }
 
             .final-cta-btn {
-                font-size: 20px;
-                padding: 16px 50px;
+                font-size: 15px;
+                padding: 16px 30px;
+                min-width: 200px;
+                white-space: nowrap;
+            }
+
+            .final-cta-btn::after {
+                content: "KUPI -40%";
+            }
+
+            .final-cta-btn .cta-text {
+                display: none;
             }
 
             .section-title {
@@ -1617,7 +1650,7 @@
                 <h1 class="hero-main">Za mirno zimo brez smrkanja in kihanja</h1>
                 <div class="hero-badge">
                     <span class="badge-icon">🔥</span>
-                    <span class="badge-text">BLACK FRIDAY: 40% POPUST</span>
+                    <span class="badge-text">BLACK FRIDAY -40%</span>
                     <span class="badge-icon">🔥</span>
                 </div>
             </div>
@@ -1647,7 +1680,7 @@
                         </div>
                     </div>
 
-                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">KUPI ZDAJ - PRIHRANI 40%</a>
+                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow"><span class="cta-text">KUPI ZDAJ - PRIHRANI 40%</span></a>
 
                     <div class="timer">
                         <div class="timer-unit">
@@ -1928,7 +1961,7 @@
             <h2>Ne zamudite BLACK FRIDAY ponudbe!</h2>
             <span class="highlight">40% POPUST</span>
             <p>Okrepite imunski sistem za vso družino z MinusGrip. Naravne sestavine, dokazana učinkovitost, prijetno sadje okus.</p>
-            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">KUPI ZDAJ - PRIHRANI 40%</a>
+            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow"><span class="cta-text">KUPI ZDAJ - PRIHRANI 40%</span></a>
             <p class="urgency-text">⏰ Ponudba velja le še omejeno časa!</p>
 
             <div class="timer timer-final">
