@@ -2061,11 +2061,9 @@
             });
         });
 
-        // Countdown Timer
+        // Countdown Timer - ends Sunday 30.11.2025 at 23:59:59
         function startCountdown() {
-            const endDate = new Date();
-            endDate.setDate(endDate.getDate() + 7);
-            endDate.setHours(23, 59, 59, 999);
+            const endDate = new Date('2025-11-30T23:59:59');
 
             function updateTimer() {
                 const now = new Date();
