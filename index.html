@@ -2164,17 +2164,17 @@
 
         scheduleNextStockUpdate();
 
-        // Exit Intent Detection
-        let exitIntentShown = sessionStorage.getItem('exitIntentShown') === 'true';
+        // Exit Intent Detection - DISABLED (no email system in place)
+        // let exitIntentShown = sessionStorage.getItem('exitIntentShown') === 'true';
 
-        document.addEventListener('mouseleave', (e) => {
-            // Trigger when mouse leaves viewport from top
-            if (e.clientY <= 0 && !exitIntentShown) {
-                exitIntentShown = true;
-                sessionStorage.setItem('exitIntentShown', 'true');
-                showExitIntent();
-            }
-        });
+        // document.addEventListener('mouseleave', (e) => {
+        //     // Trigger when mouse leaves viewport from top
+        //     if (e.clientY <= 0 && !exitIntentShown) {
+        //         exitIntentShown = true;
+        //         sessionStorage.setItem('exitIntentShown', 'true');
+        //         showExitIntent();
+        //     }
+        // });
 
         function showExitIntent() {
             document.getElementById('exitIntentOverlay').classList.add('active');
