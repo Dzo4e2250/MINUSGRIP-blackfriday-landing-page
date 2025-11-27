@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLACK FRIDAY - MinusGrip | Avena</title>
-    <meta name="description" content="MinusGrip - naravna moč za imunitet. BLACK FRIDAY akcija: 40% popust! Pomaga pri krepitvi imunskega sistema z vitamin C, cinkom in naravnimi izvlečki.">
+    <meta name="description" content="MinusGrip - naravna moč za imunitet. BLACK FRIDAY akcija: 20% popust! Pomaga pri krepitvi imunskega sistema z vitamin C, cinkom in naravnimi izvlečki.">
     <style>
         * {
             margin: 0;
@@ -70,6 +70,7 @@
             color: #ffffff;
             box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
             margin-bottom: 40px;
+            animation: badge-mega-pulse 3s ease-in-out infinite;
         }
 
         .badge-icon {
@@ -164,13 +165,27 @@
         }
 
         .price-old {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 700;
             color: #FF0000;
             text-decoration: line-through;
-            text-decoration-thickness: 3px;
+            text-decoration-thickness: 4px;
             margin-bottom: 5px;
-            opacity: 0.8;
+            margin-top: 25px;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .price-old::before {
+            content: "REDNA CENA";
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: 600;
+            color: #b0b0b0;
+            letter-spacing: 1px;
         }
 
         .price-new {
@@ -179,8 +194,20 @@
             color: #FFD700;
             line-height: 1;
             margin-bottom: 15px;
+            margin-top: 10px;
             text-shadow: 0 4px 20px rgba(255, 215, 0, 0.4),
                          0 0 40px rgba(255, 215, 0, 0.2);
+            position: relative;
+        }
+
+        .price-new::before {
+            content: "BLACK FRIDAY CENA";
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFD23F;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
         }
 
         .price-save {
@@ -367,6 +394,18 @@
             }
         }
 
+        @keyframes badge-mega-pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 45px rgba(255, 0, 0, 0.7),
+                            0 0 60px rgba(255, 0, 0, 0.4);
+            }
+        }
+
         .cta-arrow {
             position: relative;
             display: inline-block;
@@ -417,7 +456,7 @@
 
         .trust-badges-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             align-items: center;
         }
@@ -444,6 +483,167 @@
             font-weight: 600;
             color: #ffffff;
             line-height: 1.4;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .payment-methods-text {
+            font-size: 12px;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .payment-icon {
+            height: 32px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .payment-icon:hover {
+            opacity: 1;
+        }
+
+        /* Exit Intent Popup */
+        .exit-intent-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .exit-intent-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exit-intent-popup {
+            background: linear-gradient(135deg, #1a3a32 0%, #0d211c 100%);
+            border: 3px solid #c9a961;
+            border-radius: 16px;
+            padding: 50px 40px;
+            max-width: 550px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .exit-intent-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: #b0b0b0;
+            font-size: 32px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .exit-intent-close:hover {
+            color: #ffffff;
+        }
+
+        .exit-intent-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .exit-intent-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .exit-intent-subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .exit-intent-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .exit-intent-input {
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #c9a961;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0d211c;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .exit-intent-input::placeholder {
+            color: #666;
+        }
+
+        .exit-intent-btn {
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: 700;
+            background-color: #FF6B35;
+            color: #ffffff;
+            border: 3px solid #FFD23F;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .exit-intent-btn:hover {
+            background-color: #FF4500;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+        }
+
+        .exit-intent-guarantee {
+            font-size: 13px;
+            color: #808080;
+            margin-top: 15px;
         }
 
         /* Stats Section */
@@ -1160,8 +1360,23 @@
             }
 
             .hero-badge {
-                font-size: 16px;
-                padding: 8px 20px;
+                font-size: 14px;
+                padding: 12px 25px;
+                white-space: nowrap;
+                width: calc(100vw - 40px);
+                max-width: calc(100vw - 40px);
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .badge-text {
+                display: inline;
+            }
+
+            .badge-icon {
+                display: inline;
+                margin: 0 5px;
             }
 
             .product-img {
@@ -1212,11 +1427,21 @@
             }
 
             .price-old {
-                font-size: 24px;
+                font-size: 28px;
+                margin-top: 20px;
+            }
+
+            .price-old::before {
+                font-size: 10px;
+                top: -18px;
             }
 
             .price-new {
                 font-size: 48px;
+            }
+
+            .price-new::before {
+                font-size: 11px;
             }
 
             .price-save {
@@ -1225,13 +1450,23 @@
             }
 
             .cta-btn {
-                font-size: 18px;
-                padding: 14px 40px;
-                min-width: 250px;
+                font-size: 16px;
+                padding: 18px 20px;
+                width: calc(100vw - 40px);
+                max-width: calc(100vw - 40px);
+                min-width: auto;
                 margin-top: -35px;
                 margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
                 position: relative;
                 transform: translateY(-50%);
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            .cta-btn .cta-text {
+                display: inline;
             }
 
             .timer {
@@ -1358,8 +1593,19 @@
             }
 
             .final-cta-btn {
-                font-size: 20px;
-                padding: 16px 50px;
+                font-size: 17px;
+                padding: 20px 25px;
+                width: calc(100vw - 40px);
+                max-width: calc(100vw - 40px);
+                min-width: auto;
+                margin-left: auto;
+                margin-right: auto;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            .final-cta-btn .cta-text {
+                display: inline;
             }
 
             .section-title {
@@ -1367,19 +1613,22 @@
             }
 
             .scarcity-banner-top {
-                font-size: 8px;
-                padding: 8px 9px;
+                font-size: 11px;
+                padding: 10px 12px;
+                letter-spacing: 0.3px;
             }
 
             .stock-number {
-                font-size: 14px;
+                font-size: 16px;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
             }
 
             .sold-indicator {
                 display: block;
                 margin-left: 0;
                 margin-top: 3px;
-                font-size: 8px;
+                font-size: 9px;
+                letter-spacing: 0.2px;
             }
 
             .sold-indicator::before {
@@ -1391,7 +1640,7 @@
 <body>
     <!-- Sticky Scarcity Banner -->
     <div class="scarcity-banner-top">
-        ⚠️ BLACK FRIDAY POPUST: Samo še <span class="stock-number" id="stock-count">23</span> paketov na zalogi!
+        ⚠️ BLACK FRIDAY: KRITIČNO NIZKA ZALOGA - Samo še <span class="stock-number" id="stock-count">23</span> paketov!
         <span class="sold-indicator">● <span id="sold-count">17</span> prodanih v zadnjih 3 urah</span>
     </div>
 
@@ -1404,7 +1653,7 @@
                 <h1 class="hero-main">Za mirno zimo brez smrkanja in kihanja</h1>
                 <div class="hero-badge">
                     <span class="badge-icon">🔥</span>
-                    <span class="badge-text">BLACK FRIDAY: 40% POPUST</span>
+                    <span class="badge-text">BLACK FRIDAY -20%</span>
                     <span class="badge-icon">🔥</span>
                 </div>
             </div>
@@ -1429,12 +1678,12 @@
 
                         <div class="price-display">
                             <div class="price-old">€29.99</div>
-                            <div class="price-new">€17.99</div>
-                            <div class="price-save">Prihranite €12 (40%)</div>
+                            <div class="price-new">€23.99</div>
+                            <div class="price-save">Prihranite €6 (20%)</div>
                         </div>
                     </div>
 
-                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow">ZAŠČITI SVOJO DRUŽINO - 40% POPUST</a>
+                    <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="cta-btn cta-arrow"><span class="cta-text">KUPI ZDAJ - PRIHRANI 20%</span></a>
 
                     <div class="timer">
                         <div class="timer-unit">
@@ -1464,6 +1713,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -1500,12 +1750,6 @@
                         <img src="trust-delivery.png" alt="Free Shipping Icon">
                     </div>
                     <div class="trust-badge-text">BREZPLAČNA DOSTAVA<br>nad 50€</div>
-                </div>
-                <div class="trust-badge">
-                    <div class="trust-badge-icon">
-                        <img src="trust-guarantee.png" alt="30-Day Guarantee Icon">
-                    </div>
-                    <div class="trust-badge-text">30-DNEVNA GARANCIJA<br>vračila denarja</div>
                 </div>
                 <div class="trust-badge">
                     <div class="trust-badge-icon">
@@ -1707,45 +1951,13 @@
         </div>
     </section>
 
-    <!-- Guarantee Section -->
-    <section class="guarantee">
-        <div class="guarantee-wrapper">
-            <h2 class="section-title">Brez tveganja. 100% zadovoljstvo zagotovljeno.</h2>
-
-            <div class="guarantee-box">
-                <div class="guarantee-badge">🛡️</div>
-                <h3 class="guarantee-title">30-Dnevna Garancija Vračila Denarja</h3>
-                <p class="guarantee-text">
-                    Verjamemo v moč MinusGrip. Če v 30 dneh ne boste popolnoma zadovoljni z rezultati,
-                    vam bomo vrnili celotni znesek - brez vprašanj, brez zapletov.
-                    Tveganje je popolnoma naše, zadovoljstvo pa vaše!
-                </p>
-
-                <div class="guarantee-points">
-                    <div class="guarantee-point">
-                        <div class="guarantee-point-icon">✓</div>
-                        <div class="guarantee-point-text">Preprost postopek vračila</div>
-                    </div>
-                    <div class="guarantee-point">
-                        <div class="guarantee-point-icon">✓</div>
-                        <div class="guarantee-point-text">Hitro povračilo denarja</div>
-                    </div>
-                    <div class="guarantee-point">
-                        <div class="guarantee-point-icon">✓</div>
-                        <div class="guarantee-point-text">Brez skritih stroškov</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="final-cta-wrapper">
             <h2>Ne zamudite BLACK FRIDAY ponudbe!</h2>
-            <span class="highlight">40% POPUST</span>
+            <span class="highlight">20% POPUST</span>
             <p>Okrepite imunski sistem za vso družino z MinusGrip. Naravne sestavine, dokazana učinkovitost, prijetno sadje okus.</p>
-            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow">NAROČITE MINUSGRIP - ZAŠČITITE SVOJO DRUŽINO</a>
+            <a href="https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/" class="final-cta-btn cta-arrow"><span class="cta-text">KUPI ZDAJ - PRIHRANI 20%</span></a>
             <p class="urgency-text">⏰ Ponudba velja le še omejeno časa!</p>
 
             <div class="timer timer-final">
@@ -1781,8 +1993,21 @@
                     <div class="footer-logo">AVENA</div>
                     <p>Vaš zanesljiv partner za naravne dodatke prehrani in zdravo življenje. Nudimo samo kakovostne izdelke preverjenihproizvajalcev.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/avena.si" target="_blank" aria-label="Facebook">f</a>
-                        <a href="https://www.instagram.com/avena.si" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="https://www.facebook.com/avenasloptuj" target="_blank" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/avena.si" target="_blank" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://avena.si" target="_blank" aria-label="Spletna stran">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
@@ -1801,7 +2026,7 @@
                 <div class="footer-column">
                     <h3>Kontakt</h3>
                     <p><strong>E-pošta:</strong><br>info@avena.si</p>
-                    <p><strong>Telefon:</strong><br>+386 1 234 5678</p>
+                    <p><strong>Telefon:</strong><br>041 445 057</p>
                     <p><strong>Delovni čas:</strong><br>Pon - Pet: 9:00 - 17:00</p>
                 </div>
             </div>
@@ -1812,6 +2037,21 @@
         </div>
     </footer>
 
+    <!-- Exit Intent Popup -->
+    <div class="exit-intent-overlay" id="exitIntentOverlay">
+        <div class="exit-intent-popup">
+            <button class="exit-intent-close" onclick="closeExitIntent()">×</button>
+            <div class="exit-intent-icon">⚠️</div>
+            <h2 class="exit-intent-title">POČAKAJTE!</h2>
+            <p class="exit-intent-subtitle">Dobite <strong style="color: #FFD700;">dodatnih 10% popust</strong> na vaš prvi nakup.<br>Skupaj že <strong style="color: #FF6B35;">30% prihranite!</strong></p>
+            <form class="exit-intent-form" onsubmit="submitExitIntent(event)">
+                <input type="email" class="exit-intent-input" placeholder="Vnesite vaš email" required id="exitEmail">
+                <button type="submit" class="exit-intent-btn">POŠLJI MI KOD ZA 10% POPUST</button>
+            </form>
+            <p class="exit-intent-guarantee">🔒 Vaš email je varen. Brez spam sporočil.</p>
+        </div>
+    </div>
+
     <script>
         // FAQ Toggle Functionality
         document.querySelectorAll('.faq-question').forEach(question => {
@@ -1821,11 +2061,9 @@
             });
         });
 
-        // Countdown Timer
+        // Countdown Timer - ends Sunday 30.11.2025 at 23:59:59
         function startCountdown() {
-            const endDate = new Date();
-            endDate.setDate(endDate.getDate() + 7);
-            endDate.setHours(23, 59, 59, 999);
+            const endDate = new Date('2025-11-30T23:59:59');
 
             function updateTimer() {
                 const now = new Date();
@@ -1891,23 +2129,88 @@
         // Update viewing count every 30 seconds
         setInterval(updateViewingCount, 30000);
 
-        // Stock countdown - decrease stock every 8-12 minutes
+        // Stock countdown - realistic timing based on peak hours
         let stockCount = 23;
+        let soldCount = 17;
         const stockElement = document.getElementById('stock-count');
         const soldElement = document.getElementById('sold-count');
 
-        function updateStock() {
-            if (stockCount > 8) {
-                stockCount--;
-                stockElement.textContent = stockCount;
+        function updateStockRealistic() {
+            const hour = new Date().getHours();
 
-                const currentSold = parseInt(soldElement.textContent);
-                soldElement.textContent = currentSold + 1;
+            // Peak hours (10-14, 18-21) = higher sales probability
+            const isPeakHour = (hour >= 10 && hour <= 14) || (hour >= 18 && hour <= 21);
+            const sellProbability = isPeakHour ? 0.7 : 0.4;
+
+            // Only update if we're above minimum stock and random check passes
+            if (Math.random() < sellProbability && stockCount > 8) {
+                stockCount--;
+                soldCount++;
+                stockElement.textContent = stockCount;
+                soldElement.textContent = soldCount;
             }
         }
 
-        // Decrease stock by 1 every 8-12 minutes (randomized)
-        setInterval(updateStock, Math.random() * 240000 + 480000);
+        // Run every 12-18 minutes (randomized for natural feel)
+        function scheduleNextStockUpdate() {
+            const delay = Math.random() * 360000 + 720000; // 12-18 minutes
+            setTimeout(() => {
+                updateStockRealistic();
+                scheduleNextStockUpdate();
+            }, delay);
+        }
+
+        scheduleNextStockUpdate();
+
+        // Exit Intent Detection - DISABLED (no email system in place)
+        // let exitIntentShown = sessionStorage.getItem('exitIntentShown') === 'true';
+
+        // document.addEventListener('mouseleave', (e) => {
+        //     // Trigger when mouse leaves viewport from top
+        //     if (e.clientY <= 0 && !exitIntentShown) {
+        //         exitIntentShown = true;
+        //         sessionStorage.setItem('exitIntentShown', 'true');
+        //         showExitIntent();
+        //     }
+        // });
+
+        function showExitIntent() {
+            document.getElementById('exitIntentOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeExitIntent() {
+            document.getElementById('exitIntentOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function submitExitIntent(event) {
+            event.preventDefault();
+            const email = document.getElementById('exitEmail').value;
+
+            // Here you would normally send email to your backend/email service
+            console.log('Exit intent email captured:', email);
+
+            // Show success message and redirect to product page with discount code
+            alert('Hvala! Vaša koda za 10% popust: MINUS10\n\nPreusmerjamo vas na izdelek...');
+
+            // Redirect to product page
+            window.location.href = 'https://avena.si/trgovina/minusgrip-steklenicke-soria-natural-10x15ml-kopija/?discount=MINUS10';
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('exitIntentOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'exitIntentOverlay') {
+                closeExitIntent();
+            }
+        });
+
+        // Close popup with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeExitIntent();
+            }
+        });
     </script>
 </body>
 </html>
